@@ -21,7 +21,7 @@ import parkingImg from '../img/servicios/Estacionamiento.png';
 const services = [
   { key: 'pool_open', icon: Waves, color: 'from-blue-500 to-cyan-400', image: poolOpenImg },
   { key: 'pool_covered', icon: Umbrella, color: 'from-indigo-500 to-blue-400', image: poolCoveredImg },
-  { key: 'playground', icon: Baby, color: 'from-orange-500 to-amber-400', image: playgroundImg },
+  { key: 'playground', icon: Baby, color: 'from-orange-500 to-amber-400', image: kidsImg },
   { key: 'electricity', icon: Zap, color: 'from-yellow-500 to-orange-400', image: electricityImg },
   { key: 'parks', icon: TreePine, color: 'from-emerald-500 to-green-400', image: parksImg },
   { key: 'bbq', icon: Flame, color: 'from-red-500 to-orange-400', image: bbqImg },
