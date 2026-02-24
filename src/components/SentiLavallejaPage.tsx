@@ -9,7 +9,7 @@ import bosqueImage from '../img/senti-lavalleja/Bosque.webp';
 import parcelasImage from '../img/senti-lavalleja/Parcelas.webp';
 import cabanasImage from '../img/senti-lavalleja/Cabanas.webp';
 import piscinaImage from '../img/senti-lavalleja/Piscina.webp';
-import motorhomeImage from '../img/senti-lavalleja/Motohome.webp';
+import motorhomeImage from '../img/senti-lavalleja/Motorhome.webp';
 
 export default function SentiLavallejaPage() {
   const lang = useStore($language);

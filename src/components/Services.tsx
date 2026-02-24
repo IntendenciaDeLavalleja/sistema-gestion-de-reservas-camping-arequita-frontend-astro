@@ -9,10 +9,10 @@ import { $language } from '../stores/language';
 import { t } from '../i18n/translations';
 
 // Asset Imports
-import poolOpenImg from '../img/servicios/Psicina.png';
+import poolOpenImg from '../img/servicios/Piscina.png';
 import poolCoveredImg from '../img/servicios/Piscina-Techada.png';
-import playgroundImg from '../img/servicios/Infantiles.png';
-import electricityImg from '../img/servicios/Electriciadad.png';
+import kidsImg from '../img/servicios/Infantiles.png';
+import electricityImg from '../img/servicios/Electricidad.png';
 import parksImg from '../img/servicios/Paseos.png';
 import bbqImg from '../img/servicios/Parrilleros.png';
 import wifiImg from '../img/servicios/Wifi.png';
