@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero";
+import FeaturedAccommodations from "../components/FeaturedAccommodations";
+import Services from "../components/Services";
+import Testimonials from "../components/Testimonials";
+import SuggestionForm from "../components/SuggestionForm";
+---
+
+<Layout title="Camping Arequita | Naturaleza, Confort y Aventura en Lavalleja">
+	<Hero client:load />
+	<FeaturedAccommodations client:load />
+	<Services client:load />
+	<Testimonials client:load />
+	<SuggestionForm client:load />
+</Layout>

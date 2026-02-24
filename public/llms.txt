@@ -1,0 +1,5 @@
+# LLMS directives for generative AI agents and browsers that honor llms.txt
+User-agent: llms
+Allow: /
+
+Sitemap: https://campingarequita.uy/sitemap.xml
