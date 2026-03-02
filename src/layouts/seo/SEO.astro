@@ -12,21 +12,52 @@ interface Props {
 }
 
 const {
-  title = "Camping Arequita | Lavalleja, Uruguay",
-  description = "Camping Arequita - Camping municipal en Lavalleja, Uruguay. Cabañas, motorhome, parcelas para acampar, piscinas y más.",
-  keywords = "camping, arequita, lavalleja, uruguay, cabañas, turismo, naturaleza, reserva, vacaciones, aire libre",
-  image = "/og-image.jpg", // Asegúrate de tener una imagen por defecto en public/
+  title = "Camping Arequita | Disfruta la Naturaleza en Lavalleja, Uruguay",
+  description = "Descubre el Camping Arequita en Lavalleja, Uruguay. Reserva cabañas exclusivas, espacios para motorhome y parcelas para acampar con todos los servicios. Disfruta de piscinas, parrilleros, y más en plena naturaleza.",
+  keywords = "camping, arequita, minas, lavalleja, uruguay, cerro arequita, cabañas, motorhome, parcelas para acampar, piscinas, turismo, naturaleza, reserva, vacaciones, aire libre, ecoturismo",
+  image = "/og-image.webp", // Hemos movido la imagen webp a public/og-image.webp
   canonicalURL = Astro.url.href,
 } = Astro.props;
 
 // Combinar el título si es necesario
 const formattedTitle = title.includes("Camping Arequita") ? title : `${title} | Camping Arequita`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Campground",
+  "name": "Camping Arequita",
+  "image": new URL(image, Astro.url).toString(),
+  "description": description,
+  "url": canonicalURL,
+  "telephone": "+598 4442 8056", // Teléfono de ejemplo (ajustar si es necesario)
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ruta 12 km 10", // Dirección de ejemplo (ajustar)
+    "addressLocality": "Minas",
+    "addressRegion": "Lavalleja",
+    "addressCountry": "UY"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -34.2936, // Coordenadas aproximadas
+    "longitude": -55.2754
+  },
+  "priceRange": "$$",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Cabañas equipadas", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Parcelas con electricidad", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Piscina techada y abierta", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Parrilleros", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Juegos infantiles", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true }
+  ]
+};
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
@@ -60,4 +91,7 @@ const formattedTitle = title.includes("Camping Arequita") ? title : `${title} | 
 
 <!-- Robots -->
 <!-- Permite que los buscadores indexen el sitio -->
-<meta name="robots" content="index, follow" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<!-- Structured Data / JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

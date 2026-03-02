@@ -3,8 +3,9 @@ import { useStore } from '@nanostores/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Search, Menu, X, Sun, Moon, Globe,
-  TreePine, ChevronDown
+  ChevronDown
 } from 'lucide-react';
+import logoImg from '../img/Logo.webp';
 import { $language, setLanguage, initLanguage, type Language } from '../stores/language';
 import { $theme, toggleTheme, initTheme } from '../stores/theme';
 import { t } from '../i18n/translations';
@@ -98,10 +99,14 @@ export default function Navbar() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
-              isNavbarSolid ? 'bg-primary text-primary-content' : 'bg-white/20 text-white backdrop-blur-sm'
+            <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors overflow-hidden ${
+              isNavbarSolid ? 'bg-primary/10' : 'bg-white/20 backdrop-blur-sm'
             }`}>
-              <TreePine className="w-6 h-6" />
+              <img 
+                src={logoImg.src} 
+                alt="Camping Arequita Logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="flex flex-col">
               <span className={`font-bold text-lg leading-tight tracking-tight transition-colors ${

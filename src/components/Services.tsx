@@ -9,14 +9,14 @@ import { $language } from '../stores/language';
 import { t } from '../i18n/translations';
 
 // Asset Imports
-import poolOpenImg from '../img/servicios/Piscina.png';
-import poolCoveredImg from '../img/servicios/Piscina-Techada.png';
-import kidsImg from '../img/servicios/Infantiles.png';
-import electricityImg from '../img/servicios/Electricidad.png';
-import parksImg from '../img/servicios/Paseos.png';
-import bbqImg from '../img/servicios/Parrilleros.png';
-import wifiImg from '../img/servicios/Wifi.png';
-import parkingImg from '../img/servicios/Estacionamiento.png';
+import poolOpenImg from '../img/servicios/Piscina.webp';
+import poolCoveredImg from '../img/servicios/Piscina-Techada.webp';
+import kidsImg from '../img/servicios/Infantiles.webp';
+import electricityImg from '../img/servicios/Electricidad.webp';
+import parksImg from '../img/servicios/Paseos.webp';
+import bbqImg from '../img/servicios/Parrilleros.webp';
+import wifiImg from '../img/servicios/Wifi.webp';
+import parkingImg from '../img/servicios/Estacionamiento.webp';
 
 const services = [
   { key: 'pool_open', icon: Waves, color: 'from-blue-500 to-cyan-400', image: poolOpenImg },
