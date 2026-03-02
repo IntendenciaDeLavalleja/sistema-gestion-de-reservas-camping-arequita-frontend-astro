@@ -39,7 +39,7 @@ export default function Hero() {
   }, [images.length]);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-zinc-900">
+    <section className="hero-short-vh relative min-h-screen overflow-hidden bg-zinc-900">
       {/* Background Images with Crossfade */}
       <AnimatePresence mode="wait">
         {images.length > 0 && (
@@ -65,7 +65,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-linear-to-r from-black/50 via-transparent to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex items-start md:items-center pt-24 sm:pt-28 md:pt-0 pb-24 sm:pb-28 md:pb-0">
+      <div className="hero-content relative z-10 min-h-screen flex items-start md:items-center pt-24 sm:pt-28 md:pt-0 pb-24 sm:pb-28 md:pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl">
             {/* Location Badge */}
@@ -73,7 +73,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="inline-flex max-w-full items-center gap-2 bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-full px-3 sm:px-5 py-2 mb-6 sm:mb-8 border border-white/20"
+              className="hero-location inline-flex max-w-full items-center gap-2 bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-full px-3 sm:px-5 py-2 mb-6 sm:mb-8 border border-white/20"
             >
               <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
               <span className="text-white/90 text-xs sm:text-sm font-medium leading-tight">
@@ -87,7 +87,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8, ease: 'easeOut' }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-5 sm:mb-6"
+              className="hero-title text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-5 sm:mb-6"
             >
               {t('hero_title', lang).split(' ').map((word, i, arr) => {
                 if (i >= arr.length - 2) {
@@ -106,7 +106,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8, ease: 'easeOut' }}
-              className="text-base sm:text-xl text-white/80 leading-relaxed mb-8 sm:mb-10 max-w-2xl"
+              className="hero-subtitle text-base sm:text-xl text-white/80 leading-relaxed mb-8 sm:mb-10 max-w-2xl"
             >
               {t('hero_subtitle', lang)}
             </motion.p>
@@ -116,7 +116,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.8 }}
-              className="flex flex-wrap gap-3 sm:gap-4"
+              className="hero-cta flex flex-wrap gap-3 sm:gap-4"
             >
               <a
                 href="/senti-lavalleja"
@@ -146,7 +146,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.8 }}
-              className="grid grid-cols-3 gap-3 sm:gap-8 mt-10 sm:mt-16 w-full max-w-lg"
+              className="hero-stats grid grid-cols-3 gap-3 sm:gap-8 mt-10 sm:mt-16 w-full max-w-lg"
             >
               {[
                 { value: '24/7', label: lang === 'pt' ? 'Natureza' : lang === 'en' ? 'Nature' : lang === 'zh' ? '自然' : 'Naturaleza' },
