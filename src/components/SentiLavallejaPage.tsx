@@ -62,7 +62,17 @@ export default function SentiLavallejaPage() {
             <li><span className="text-emerald-400 mr-2">✓</span>{t('sl_exp1_li3', lang)}</li>
             <li><span className="text-emerald-400 mr-2">✓</span>{t('sl_exp1_li4', lang)}</li>
           </ul>
-          <a href="/search" className="mt-8 inline-flex rounded-full bg-emerald-500 px-8 py-3 text-sm font-bold uppercase tracking-wide text-white transition duration-300 hover:bg-emerald-400 shadow-lg shadow-emerald-500/20">{t('sl_exp1_cta', lang)}</a>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href="/search" className="inline-flex rounded-full bg-emerald-500 px-8 py-3 text-sm font-bold uppercase tracking-wide text-white transition duration-300 hover:bg-emerald-400 shadow-lg shadow-emerald-500/20">{t('sl_exp1_cta', lang)}</a>
+            <a
+              href="https://manantialesserranos.uy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-full border border-cyan-300/60 bg-cyan-500/10 px-8 py-3 text-sm font-bold uppercase tracking-wide text-cyan-100 transition duration-300 hover:bg-cyan-400 hover:text-white shadow-lg shadow-cyan-500/20"
+            >
+              Portal del Geoparque
+            </a>
+          </div>
         </div>
         <div className="order-1 overflow-hidden rounded-4xl shadow-2xl shadow-black/60 md:order-2">
           <img
