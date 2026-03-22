@@ -33,6 +33,7 @@ type TranslationKeys = {
   acc_amenities: string;
   acc_description: string;
   acc_close: string;
+  acc_no_vacancies: string;
   acc_filters: string;
   acc_type: string;
   acc_price_range: string;
@@ -194,6 +195,7 @@ const translations: Record<Language, TranslationKeys> = {
     acc_amenities: 'Comodidades',
     acc_description: 'Descripción',
     acc_close: 'Cerrar',
+    acc_no_vacancies: 'En este momento no tenemos vacantes disponibles. Nuestro sistema es on demand: solo podés reservar cuando hay lugares libres. ¡Volvé pronto y animate a asegurar tu lugar!',
     acc_filters: 'Filtros',
     acc_type: 'Tipo',
     acc_price_range: 'Rango de precio',
@@ -345,6 +347,7 @@ const translations: Record<Language, TranslationKeys> = {
     acc_amenities: 'Amenities',
     acc_description: 'Description',
     acc_close: 'Close',
+    acc_no_vacancies: 'No vacancies available at the moment. Our system is on demand: you can only book when spots are open. Check back soon and secure your place!',
     acc_filters: 'Filters',
     acc_type: 'Type',
     acc_price_range: 'Price range',
@@ -496,6 +499,7 @@ const translations: Record<Language, TranslationKeys> = {
     acc_amenities: 'Comodidades',
     acc_description: 'Descrição',
     acc_close: 'Fechar',
+    acc_no_vacancies: 'Não há vagas disponíveis no momento. Nosso sistema é on demand: só é possível reservar quando há lugares livres. Volte em breve e garanta o seu lugar!',
     acc_filters: 'Filtros',
     acc_type: 'Tipo',
     acc_price_range: 'Faixa de preço',
@@ -647,6 +651,7 @@ const translations: Record<Language, TranslationKeys> = {
     acc_amenities: '设施',
     acc_description: '描述',
     acc_close: '关闭',
+    acc_no_vacancies: '目前暂无可用空位。我们的系统按需开放预订：仅在有名额时才可预约。请稍后再来，抓住您的机会！',
     acc_filters: '筛选',
     acc_type: '类型',
     acc_price_range: '价格范围',

@@ -239,7 +239,7 @@ export default function AccommodationCard({ accommodation, index = 0 }: Props) {
               <Users className="w-3.5 h-3.5" />
               {acc.capacity} {t('acc_persons', lang)}
             </span>
-            <span className="text-emerald-500 font-medium">
+            <span className={acc.available === 0 ? 'text-error font-medium' : 'text-emerald-500 font-medium'}>
               {acc.available} {t('acc_available', lang)}
             </span>
           </div>
@@ -396,7 +396,11 @@ export default function AccommodationCard({ accommodation, index = 0 }: Props) {
                         <div className="badge badge-primary badge-outline font-bold">
                           {typeLabels[acc.type]}
                         </div>
-                        <div className="flex items-center gap-1 text-emerald-600 font-bold bg-emerald-50 px-2 py-1 rounded-lg">
+                        <div className={`flex items-center gap-1 font-bold px-2 py-1 rounded-lg ${
+                          acc.available === 0
+                            ? 'text-error bg-error/10'
+                            : 'text-emerald-600 bg-emerald-50'
+                        }`}>
                           <Check className="w-4 h-4" />
                           <span>{acc.available} / {acc.total} {t('acc_available', lang)}</span>
                         </div>
@@ -443,7 +447,7 @@ export default function AccommodationCard({ accommodation, index = 0 }: Props) {
 
                     {/* Booking Form (Conditional) */}
                     <AnimatePresence>
-                      {bookingOpen && (
+                      {bookingOpen && acc.available > 0 && (
                         <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
@@ -575,14 +579,23 @@ export default function AccommodationCard({ accommodation, index = 0 }: Props) {
                           {acc.capacity} {t('acc_persons', lang)} máx.
                         </div>
                       </div>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={() => setBookingOpen((prev) => !prev)}
-                        className={`btn ${bookingOpen ? 'btn-ghost border-base-300' : 'btn-primary'} rounded-2xl px-8 h-14 text-lg font-bold shadow-xl`}
-                      >
-                        {bookingOpen ? t('acc_close', lang) : t('acc_book_now', lang)}
-                      </motion.button>
+                      {acc.available === 0 ? (
+                        <div className="alert alert-warning rounded-2xl">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                          </svg>
+                          <span className="text-sm font-medium">{t('acc_no_vacancies', lang)}</span>
+                        </div>
+                      ) : (
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={() => setBookingOpen((prev) => !prev)}
+                          className={`btn ${bookingOpen ? 'btn-ghost border-base-300' : 'btn-primary'} rounded-2xl px-8 h-14 text-lg font-bold shadow-xl`}
+                        >
+                          {bookingOpen ? t('acc_close', lang) : t('acc_book_now', lang)}
+                        </motion.button>
+                      )}
                     </div>
                     {/* Testimonials List */}
                     <div className="pt-10 border-t border-base-200">
