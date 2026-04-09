@@ -101,7 +101,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm text-neutral-content/60">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                +598 4442 1234
+                +598 4440 2503
               </li>
               <li className="flex items-center gap-3 text-sm text-neutral-content/60">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
